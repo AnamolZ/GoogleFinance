@@ -19,6 +19,11 @@ async def fetch_data(client, semaphore, stock):
 
         response = await client.get(url, headers=headers)
 
+        if response.status_code == 200:
+            html = response.text
+            soup = BeautifulSoup(html, 'lxml')
+            targetDiv = soup.find('div', class_='YMlKec fxKbKc')
+
 
 
 
