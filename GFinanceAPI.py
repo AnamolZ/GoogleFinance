@@ -41,6 +41,13 @@ async def fetch_data(client, semaphore, stock):
         else:
             print(f'Failed to retrieve the page for {stock}. Status code: {response.status_code}')
 
+async def validate_token(token: str):
+    try:
+        current_user = await get_current_user(token=token)
+        return current_user
+    except HTTPException as exc:
+        return exc
+
 async def fetch_all_stocks(stock_symbols):
     semaphore = asyncio.Semaphore(8)
     async with httpx.AsyncClient() as client:
