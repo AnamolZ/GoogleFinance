@@ -6,7 +6,8 @@ from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 import json
-json_data = Crea
+json_data = open('Cre.json').read()
+
 app = FastAPI()
 
 SECRET_KEY = "hbGciOiJIUzI1NiIsInRbdWIiOiJ4em5vbSIsImV4cCI6MTcwMDk"
