@@ -13,6 +13,12 @@ data={}
 async def fetch_data(client, semaphore, stock):
     start_time = time.time()
     async with semaphore:
-        
+        ua = UserAgent()
+        headers = {'User-Agent': ua.random}
+        url = f'https://www.google.com/finance/quote/{stock}:NASDAQ'
+
+        response = await client.get(url, headers=headers)
+
+
 
 
