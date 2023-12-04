@@ -24,6 +24,13 @@ async def fetch_data(client, semaphore, stock):
             soup = BeautifulSoup(html, 'lxml')
             targetDiv = soup.find('div', class_='YMlKec fxKbKc')
 
+            if targetDiv:
+                stockPrice = float(targetDiv.text.strip()[1:])
+                pageTitle = soup.title.text
+                stockName = pageTitle.split('Stock')[0].strip()
+                stockSymbolShort = re.search(r'\((.*?)\)', stockName).group(1)
+                data[stockSymbolShort] = stockPrice
+
 
 
 
