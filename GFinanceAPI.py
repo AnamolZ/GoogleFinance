@@ -31,6 +31,8 @@ async def fetch_data(client, semaphore, stock):
                 stockSymbolShort = re.search(r'\((.*?)\)', stockName).group(1)
                 data[stockSymbolShort] = stockPrice
 
-
-
+            end_time = time.time()
+            final_time = end_time - start_time
+            if final_time >2:
+                return 
 
