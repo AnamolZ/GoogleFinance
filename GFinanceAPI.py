@@ -70,4 +70,10 @@ if __name__ == "__main__":
                 break
             else:
                 print(f"Attempt {attempt}/{max_attempts}. Please try again.")
-
+        else:
+            print("Access granted!")
+            while True:
+                def main():
+                    loop = asyncio.get_event_loop()
+                    loop.run_until_complete(fetch_all_stocks(stockSymbols))
+                main()
