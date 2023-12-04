@@ -9,6 +9,8 @@ from fastapi import HTTPException
 
 from GFinanceAPI import get_current_user
 
+stockSymbols = ["AAPL", "AMZN", "GOOGL", "MSFT", "TSLA", "GOOG", "NVDA", "NFLX"]
+
 data={}
 async def fetch_data(client, semaphore, stock):
     start_time = time.time()
