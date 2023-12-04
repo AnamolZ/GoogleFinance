@@ -55,3 +55,8 @@ async def fetch_all_stocks(stock_symbols):
         await asyncio.gather(*tasks)
     print(data)
 
+if __name__ == "__main__":
+    max_attempts = 3
+    for attempt in range(1, max_attempts + 1):
+        token_input = input("Enter your access token: ")
+
