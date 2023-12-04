@@ -60,3 +60,14 @@ if __name__ == "__main__":
     for attempt in range(1, max_attempts + 1):
         token_input = input("Enter your access token: ")
 
+        loop = asyncio.get_event_loop()
+        result = loop.run_until_complete(validate_token(token_input))
+
+        if isinstance(result, HTTPException):
+            print(f"Access denied!")
+            if attempt == max_attempts:
+                print("Maximum Attempt")
+                break
+            else:
+                print(f"Attempt {attempt}/{max_attempts}. Please try again.")
+
