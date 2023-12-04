@@ -21,6 +21,16 @@ class User(BaseModel):
     email: EmailStr or None = None
     disabled: bool or None = None
 
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+class TokenData(BaseModel):
+    username: str or None = None
+
+class UserInDB(User):
+    hashed_password: str
+
 db = {
     "xznom": {
         "username": "xznom",
@@ -41,13 +51,3 @@ def get_user(db, username: str):
 def authenticate_user(db, username: str, password: str):
     user = get_user(db, username)
     return user if user and verify_password(password, user.hashed_password) else None
-
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-
-class TokenData(BaseModel):
-    username: str or None = None
-
-class UserInDB(User):
-    hashed_password: str
