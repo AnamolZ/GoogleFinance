@@ -34,3 +34,16 @@ db = {
 def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
 
+def get_user(db, username: str):
+    user_data = db.get(username)
+    return UserInDB(**user_data) if user_data else None
+
+def authenticate_user(db, username: str, password: str):
+    user = get_user(db, username)
+    return user if user and verify_password(password, user.hashed_password) else None
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+    
