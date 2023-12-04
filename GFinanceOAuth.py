@@ -1,3 +1,4 @@
+import json
 from typing import Optional
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
@@ -5,7 +6,6 @@ from pydantic import BaseModel, EmailStr
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
-import json
 
 app = FastAPI()
 
@@ -42,6 +42,7 @@ class UserInDB(User):
 #     }
 # }
 
+json_data = open('Credentials.json').read()
 db = json.loads(json_data)['xznom']
 
 def verify_password(plain_password, hashed_password):
