@@ -36,3 +36,6 @@ async def fetch_data(client, semaphore, stock):
             if final_time >2:
                 return 
 
+        else:
+            print(f'Failed to retrieve the page for {stock}. Status code: {response.status_code}')
+
