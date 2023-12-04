@@ -5,6 +5,7 @@ from pydantic import BaseModel, EmailStr
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
+import json
 
 app = FastAPI()
 
@@ -41,7 +42,7 @@ class UserInDB(User):
 #     }
 # }
 
-db = json.loads(json_data)['db']
+db = json.loads(json_data)['xznom']
 
 def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
