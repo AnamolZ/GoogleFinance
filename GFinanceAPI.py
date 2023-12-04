@@ -7,5 +7,8 @@ from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 from fastapi import HTTPException
 
+from GFinanceAPI import get_current_user
+
+
 
 
