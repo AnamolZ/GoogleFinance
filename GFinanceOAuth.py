@@ -51,3 +51,10 @@ def get_user(db, username: str):
 def authenticate_user(db, username: str, password: str):
     user = get_user(db, username)
     return user if user and verify_password(password, user.hashed_password) else None
+
+def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
+    to_encode = data.copy()
+    expire = datetime.utcnow() + (expires_delta or timedelta(minutes=1))
+    to_encode.update({"exp": expire})
+    return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
+
