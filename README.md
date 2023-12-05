@@ -14,7 +14,7 @@ A concise blueprint for developers seeking a professional and secure approach to
 1. Install Python and pip
 2. Clone the repository: `git clone https://github.com/AnamolZ/GoogleFinance.git`
 4. Install the required dependencies: `pip install -r requirements.txt`
-5. Run GFinanceOAuth: `python GFinanceOAuth.py`
+5. Get Token GFinanceOAuth: Use Postman with Auth UserName and UserPass
 6. Run GFinanceAPI: `python GFinanceAPI.py`
 
 ## Contributing to the Engine-X Community
