@@ -2,7 +2,7 @@
   #### EndPoint: OAuth Finance 
 A concise blueprint for developers seeking a professional and secure approach to web scraping integration with FastAPI, emphasizing both efficiency and user experience. Whether used as a reference or a launchpad for financial web applications, this codebase sets a high standard for modern API integrations and authentication workflows.
 
-## Library
+### Library
 
 * **JWT (JSON Web Token):** Standard for secure transmission of information, crucial for user authentication.
 * **CryptContext:** Component for secure password hashing, enhancing user authentication security.
@@ -12,10 +12,9 @@ A concise blueprint for developers seeking a professional and secure approach to
 ### Installation
 
 1. Install Python and pip
-2. Clone the repository: `git clone https://github.com/AnamolZ/Engine-X.git`
-3. Install the required dependencies: `pip install -r requirements.txt`
-4. Run the backend server: `python main.py`
-5. Open the `index.html` file in your web browser to access the application
+2. Clone the repository: `git clone https://github.com/AnamolZ/GoogleFinance.git`
+4. Install the required dependencies: `pip install -r requirements.txt`
+5. Run GFinanceAPI: `python GFinanceAPI.py`
 
 ## Contributing to the Engine-X Community
 
